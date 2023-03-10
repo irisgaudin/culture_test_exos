@@ -1,30 +1,18 @@
 //on import la fonction à tester :
-const { fizzBuzz } = require("./fizzbuzz");
+const { fizzBuzz } = require("./fizzBuzz");
 
-//ici on fait le test
+//ici on fait le test :
 describe("Test FizzBuzz", () => {
   test("divisible par 3", () => {
-    //GIVEN (ce que je donne à ma fonction):
-    const essai = 9;
-    // WHEN (je le passe à ma fonction):
-    const when = fizzBuzz(essai);
-    // THEN (expected result -- retourné par ta fonction):
-    expect(when).toEqual("Fizz");
+    expect(fizzBuzz()[3]).toEqual("Fizz");
   });
   test("divisible par 5", () => {
-    //GIVEN
-    const essai = 5;
-    //WHEN
-    const when = fizzBuzz(essai);
-    //THEN
-    expect(when).toEqual("Buzz");
+    expect(fizzBuzz()[5]).toEqual("Buzz");
   });
-  test("divisible par 3 ET 5", () => {
-    //GIVEN
-    const essai = 3000;
-    //WHEN
-    const when = fizzBuzz(essai);
-    //THEN
-    expect(when).toEqual("FizzBuzz");
+  test("divisible par 3 et par 5", () => {
+    expect(fizzBuzz()[15]).toEqual("FizzBuzz");
+  });
+  test("non divisible par 3 ou 5", () => {
+    expect(fizzBuzz()[7]).toEqual(7);
   });
 });
